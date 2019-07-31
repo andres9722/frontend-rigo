@@ -58,6 +58,7 @@ class Signup extends Component {
                 placeholder="Email"
                 value={this.state.email}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
             <label htmlFor="name">
@@ -69,6 +70,7 @@ class Signup extends Component {
                 placeholder="Nombre"
                 value={this.state.name}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
             <label htmlFor="password">
@@ -80,6 +82,7 @@ class Signup extends Component {
                 placeholder="Contraseña"
                 value={this.state.password}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
             <button type="submit">

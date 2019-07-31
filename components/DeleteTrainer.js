@@ -2,6 +2,7 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import { ALL_TRAINERS_QUERY } from "./Trainers";
+import Error from "./ErrorMessage";
 
 const DELETE_TRAINER_MUTATION = gql`
   mutation DELETE_TRAINER_MUTATION($where: TrainerWhereUniqueInput!) {
@@ -39,6 +40,8 @@ class DeleteTrainer extends React.Component {
       >
         {(deleteTrainer, { loading, error }) => {
           if (loading) return <p>Loading...</p>;
+          if (error) return <Error error={error} />;
+
           return (
             <button onClick={this.handleDelete(deleteTrainer)}>
               {children}

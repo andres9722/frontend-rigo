@@ -20,9 +20,7 @@ const SportsPage = ({ query }) => {
   return (
     <div>
       <ContainerLink>
-        <Link>
-          <LinkStyled href="/create-sport">Crear deporte</LinkStyled>
-        </Link>
+        <LinkStyled href="/create-sport">Crear deporte</LinkStyled>
       </ContainerLink>
       <Sports page={+query.page || 1} />
     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Router from "next/router";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import Form from "./styles/Form";
@@ -32,6 +33,7 @@ class Signin extends Component {
     await signup(this.state);
 
     this.setState({ email: "", password: "" });
+    Router.push({ pathname: "/" });
   };
 
   render() {
@@ -53,6 +55,7 @@ class Signin extends Component {
                 placeholder="Email"
                 value={this.state.email}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
             <label htmlFor="password">
@@ -64,6 +67,7 @@ class Signin extends Component {
                 placeholder="Contraseña"
                 value={this.state.password}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
             <button type="submit">{loading ? "Cargando..." : "Entrar"}</button>

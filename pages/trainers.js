@@ -20,9 +20,7 @@ const TrainersPage = ({ query }) => {
   return (
     <div>
       <ContainerLink>
-        <Link>
-          <LinkStyled href="/create-trainer">Crear entrenador</LinkStyled>
-        </Link>
+        <LinkStyled href="/create-trainer">Crear entrenador</LinkStyled>
       </ContainerLink>
       <Trainers page={+query.page || 1} />
     </div>

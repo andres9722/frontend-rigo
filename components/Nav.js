@@ -7,7 +7,6 @@ const Nav = () => {
   return (
     <User>
       {({ data: { me } }) => {
-        console.log("TCL: Nav -> me", me);
         return (
           <NavStyles>
             <Link href="/">
@@ -24,6 +23,11 @@ const Nav = () => {
                 <Link href="/me">
                   <a>Cuenta</a>
                 </Link>
+                {me.permissions.includes("ADMIN") && (
+                  <Link href="/permissions">
+                    <a>Permisos</a>
+                  </Link>
+                )}
                 <Signout />
               </React.Fragment>
             )}

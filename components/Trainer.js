@@ -14,7 +14,8 @@ const Trainer = ({ trainer }) => {
           <a>{trainer.name}</a>
         </Link>
       </Title>
-      <p>{trainer.email}</p>
+      <p>Email: {trainer.email}</p>
+      <p>Creado por: {trainer.user.name}</p>
 
       <div className="buttonList">
         <Link href={{ pathname: "update-trainer", query: { id: trainer.id } }}>

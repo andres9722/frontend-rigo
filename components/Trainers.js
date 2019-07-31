@@ -12,6 +12,8 @@ const ALL_TRAINERS_QUERY = gql`
       id
       name
       email
+
+      user { name }
     }
   }
 `;

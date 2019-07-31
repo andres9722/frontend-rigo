@@ -12,6 +12,10 @@ const ALL_SPORTS_QUERY = gql`
       id
       name
       capacity
+      type
+
+      user { name }
+      trainer { name }
     }
   }
 `;

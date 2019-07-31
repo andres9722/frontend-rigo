@@ -32,6 +32,15 @@ const SINGLE_SPORT_QUERY = gql`
       id
       name
       capacity
+      type
+
+      user {
+        name
+      }
+
+      trainer {
+        name
+      }
     }
   }
 `;
@@ -53,6 +62,9 @@ const SingleSport = ({ id }) => (
             <span>Deport: </span>
             <h3>Nombre: {sport.name}</h3>
             <h3>Capacidad: {sport.capacity}</h3>
+            <h3>Tipo: {sport.type}</h3>
+            <h3>Creado por: {sport.user.name}</h3>
+            <h3>Profesor asignado: {sport.trainer.name}</h3>
           </div>
         </SingleItemStyles>
       );

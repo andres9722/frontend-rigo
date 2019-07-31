@@ -2,6 +2,7 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import { ALL_SPORTS_QUERY } from "./Sports";
+import Error from "./ErrorMessage";
 
 const DELETE_SPORT_MUTATION = gql`
   mutation DELETE_SPORT_MUTATION($where: SportWhereUniqueInput!) {
@@ -9,7 +10,6 @@ const DELETE_SPORT_MUTATION = gql`
       id
       name
       capacity
-      type
     }
   }
 `;
@@ -41,6 +41,7 @@ class DeleteSport extends React.Component {
       >
         {(deleteSport, { loading, error }) => {
           if (loading) return <p>Loading...</p>;
+          if (error) return <Error error={error} />;
           return (
             <button onClick={this.handleDelete(deleteSport)}>{children}</button>
           );

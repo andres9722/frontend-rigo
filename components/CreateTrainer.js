@@ -6,8 +6,8 @@ import Form from "./styles/Form";
 import Error from "./ErrorMessage";
 
 const CREATE_TRAINER_MUTATION = gql`
-  mutation CREATE_TRAINER_MUTATION($data: TrainerCreateInput!) {
-    createTrainer(data: $data) {
+  mutation CREATE_TRAINER_MUTATION($name: String!, $email: String!) {
+    createTrainer(name: $name, email: $email) {
       id
       email
       name
@@ -37,10 +37,7 @@ class CreateTrainer extends Component {
     const { name, email } = this.state;
 
     return (
-      <Mutation
-        mutation={CREATE_TRAINER_MUTATION}
-        variables={{ data: this.state }}
-      >
+      <Mutation mutation={CREATE_TRAINER_MUTATION} variables={this.state}>
         {(createTrainer, { loading, error }) => (
           <Form onSubmit={this.handleSubmit(createTrainer)}>
             <Error error={error} />
