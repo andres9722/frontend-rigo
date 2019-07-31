@@ -41,6 +41,11 @@ const SINGLE_SPORT_QUERY = gql`
       trainer {
         name
       }
+
+      students {
+        studentName
+        studentEmail
+      }
     }
   }
 `;
@@ -65,6 +70,16 @@ const SingleSport = ({ id }) => (
             <h3>Tipo: {sport.type}</h3>
             <h3>Creado por: {sport.user.name}</h3>
             <h3>Profesor asignado: {sport.trainer.name}</h3>
+            <br />
+            <br />
+
+            <h3>Estudiantes matriculados</h3>
+            {sport.students.map(s => (
+              <p>
+                {" "}
+                Nombre: {s.studentName} - Correo: {s.studentEmail}
+              </p>
+            ))}
           </div>
         </SingleItemStyles>
       );

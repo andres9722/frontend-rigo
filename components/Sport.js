@@ -18,6 +18,7 @@ const Sport = ({ sport }) => {
       <p>Tipo: {sport.type}</p>
       <p>Creador por: {sport.user.name}</p>
       <p>Entrenador asignado: {sport.trainer.name}</p>
+      <p>Numero de estudiantes matriculados: {sport.students.length}</p>
 
       <div className="buttonList">
         <Link href={{ pathname: "update-sport", query: { id: sport.id } }}>

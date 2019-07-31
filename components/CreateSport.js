@@ -208,10 +208,18 @@ class CreateSport extends Component {
             </div>
             <br />
             {this.state.students.map(student => (
-              <div>
-                <p>Name {student.studentName}</p>
-                <p>Email {student.studentEmail}</p>
-                <p>Age {student.studentAge}</p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  border: "1px solid #ccc",
+                  padding: "16px",
+                  marginBottom: "32px"
+                }}
+              >
+                <p>Nombre: {student.studentName}</p>
+                <p>Correo: {student.studentEmail}</p>
+                <p>Edad: {student.studentAge}</p>
               </div>
             ))}
             <button type="submit">Crear</button>

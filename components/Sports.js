@@ -16,6 +16,9 @@ const ALL_SPORTS_QUERY = gql`
 
       user { name }
       trainer { name }
+      students {
+        studentName
+      }
     }
   }
 `;
